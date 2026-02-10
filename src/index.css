@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 min-h-screen bg-navy font-sans text-soft antialiased;
+  background-image:
+    linear-gradient(145deg, rgba(95, 136, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(-35deg, rgba(95, 136, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 20% 0%, rgba(53, 90, 191, 0.48), rgba(9, 29, 87, 0.95));
+  background-size: 220px 220px, 220px 220px, cover;
+  background-position: 0 0, 20px 40px, center;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply border border-white/20 bg-white/5 shadow-dreamy backdrop-blur;
+}
+
+.safe-px {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
