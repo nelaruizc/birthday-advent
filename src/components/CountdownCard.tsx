@@ -24,7 +24,10 @@ const block = (value: number, label: string) => (
 )
 
 export const FloatingCountdown = ({ countdown }: CountdownProps) => (
-  <div className="my-8 bg-transparent px-2 text-center sm:my-10" aria-label="Countdown to your birthday">
+  <div
+    className="relative my-8 bg-transparent px-2 py-6 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-2/3 before:-translate-x-1/2 before:bg-[rgba(255,255,255,0.15)] before:content-[''] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-2/3 after:-translate-x-1/2 after:bg-[rgba(255,255,255,0.15)] after:content-[''] sm:my-10 sm:py-7"
+    aria-label="Countdown to your birthday"
+  >
     <dl className="flex items-start justify-center gap-2 sm:gap-3">
       {block(countdown.days, 'days')}
       <span aria-hidden="true" className="pt-1 font-serif text-3xl leading-none text-[rgba(255,255,255,0.7)] sm:text-4xl">
