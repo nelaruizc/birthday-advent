@@ -1,0 +1,29 @@
+import type { Countdown } from '../utils/countdown'
+
+type Props = {
+  countdown: Countdown
+}
+
+const block = (value: number, label: string) => (
+  <div className="min-w-[78px] text-center">
+    <dt className="font-sans text-[2.2rem] font-medium leading-none tracking-[0.03em] text-[#444d63]">{String(value).padStart(2, '0')}</dt>
+    <dd className="mt-2 text-[0.68rem] font-medium tracking-[0.12em] text-[#9095a5]">{label}</dd>
+  </div>
+)
+
+export const FloatingCountdown = ({ countdown }: Props) => (
+  <section aria-label="Birthday countdown" className="py-7">
+    <dl className="flex items-start justify-center gap-1">
+      {block(countdown.days, 'DAYS')}
+      <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
+        ·
+      </span>
+      {block(countdown.hours, 'HOURS')}
+      <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
+        ·
+      </span>
+      {block(countdown.minutes, 'MINUTES')}
+    </dl>
+    <p className="mt-4 text-center text-[0.78rem] tracking-[0.12em] text-[#9398a7]">UNTIL YOUR BIRTHDAY</p>
+  </section>
+)

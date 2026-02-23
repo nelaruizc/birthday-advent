@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { BackgroundPattern } from './components/BackgroundPattern'
 import { CountdownCard } from './components/CountdownCard'
+import { FloatingCountdown } from './components/FloatingCountdown'
 import { HeroCard } from './components/HeroCard'
 import { daysData } from './data/days'
 import { getCountdown } from './utils/countdown'
@@ -17,7 +18,8 @@ const Home = ({
   markOpened: (id: number) => void
 }) => (
   <>
-    <HeroCard countdown={countdown} />
+    <HeroCard />
+    <FloatingCountdown countdown={countdown} />
     <CountdownCard
       daysData={daysData}
       openedGifts={openedGifts}
