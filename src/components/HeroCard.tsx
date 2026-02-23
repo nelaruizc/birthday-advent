@@ -15,7 +15,7 @@ export const HeroCard = ({ countdown }: Props) => {
   const headerIllustration = `${import.meta.env.BASE_URL}happy-birthday.svg`
 
   return (
-    <section className="rounded-mega bg-[#f4f2f0] px-5 pb-7 pt-4">
+    <section className="rounded-mega bg-[#FFFFFF] px-5 pb-7 pt-4">
       <img
         src={headerIllustration}
         alt="Ilustración de pastel de cumpleaños"
