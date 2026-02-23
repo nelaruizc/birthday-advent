@@ -12,18 +12,18 @@ const block = (value: number, label: string) => (
 )
 
 export const FloatingCountdown = ({ countdown }: Props) => (
-  <section aria-label="Birthday countdown" className="py-7">
+  <section aria-label="Birthday countdown" className="py-5">
     <dl className="flex items-start justify-center gap-1">
-      {block(countdown.days, 'DAYS')}
+      {block(countdown.days, 'DÍAS')}
       <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
         ·
       </span>
-      {block(countdown.hours, 'HOURS')}
+      {block(countdown.hours, 'HORAS')}
       <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
         ·
       </span>
-      {block(countdown.minutes, 'MINUTES')}
+      {block(countdown.minutes, 'MINUTOS')}
     </dl>
-    <p className="mt-4 text-center text-[0.78rem] tracking-[0.12em] text-[#9398a7]">UNTIL YOUR BIRTHDAY</p>
+    <p className="mt-4 text-center text-[0.78rem] tracking-[0.12em] text-[#9398a7]">PARA TU CUMPLEAÑOS</p>
   </section>
 )

@@ -9,7 +9,7 @@ export const HeroCard = () => {
         className="max-h-56 w-full object-contain opacity-90"
       />
 
-      <h1 className="mt-5 text-center font-serif text-[3.2rem] leading-[0.9] text-[#48506a]">Birthday Advent</h1>
+      <h1 className="mt-5 text-center font-serif text-[3.2rem] leading-[0.9] text-[#48506a]"><span className="font-bold">Birthday</span> Advent</h1>
       <p className="mx-auto mt-4 max-w-[290px] text-center text-[1.05rem] leading-relaxed text-[#727a8f]">
         Descubre sorpresas diarias, porque celebrarte no cabe en un solo día.
       </p>
