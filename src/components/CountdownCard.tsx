@@ -10,9 +10,11 @@ type Props = {
 }
 
 const block = (value: number, label: string) => (
-  <div className="w-20 text-center">
-    <p className="font-serif text-5xl leading-none text-[#1a2c61]">{String(value).padStart(2, '0')}</p>
-    <p className="mt-1 text-xs uppercase tracking-wide text-[#364c81]">{label}</p>
+  <div className="min-w-16 text-center sm:min-w-20">
+    <dt className="font-serif text-4xl leading-none tracking-[0.08em] text-[#1a2c61] sm:text-5xl">
+      {String(value).padStart(2, '0')}
+    </dt>
+    <dd className="mt-2 text-[0.65rem] uppercase tracking-[0.22em] text-[#364c81] sm:text-xs">{label}</dd>
   </div>
 )
 
@@ -26,16 +28,19 @@ export const CountdownCard = ({ countdown, gifts, openedGifts, isUnlocked }: Pro
       </div>
     </div>
 
-    <div className="mt-4 rounded-[22px] bg-[#e8ecf4] p-4 text-center text-[#19295d] shadow-inner">
-      <p className="text-sm font-medium">Birthday Countdown Unleashed:</p>
-      <div className="mt-2 flex items-center justify-center gap-1.5">
+    <div className="mt-8 px-2 text-center text-[#19295d] sm:mt-10">
+      <dl className="flex items-start justify-center gap-2 sm:gap-3" aria-label="Countdown to your birthday">
         {block(countdown.days, 'days')}
-        <span className="-mt-5 text-4xl">:</span>
+        <span aria-hidden="true" className="pt-1 font-serif text-3xl leading-none text-[#6d7fae] sm:text-4xl">
+          ·
+        </span>
         {block(countdown.hours, 'hours')}
-        <span className="-mt-5 text-4xl">:</span>
+        <span aria-hidden="true" className="pt-1 font-serif text-3xl leading-none text-[#6d7fae] sm:text-4xl">
+          ·
+        </span>
         {block(countdown.minutes, 'minutes')}
-      </div>
-      <p className="mt-2 text-3xl font-serif">To your birthday!</p>
+      </dl>
+      <p className="mt-4 text-sm uppercase tracking-[0.18em] text-[#2f477f]/85 sm:text-base">Until your birthday</p>
     </div>
 
     <GiftGrid gifts={gifts} openedGifts={openedGifts} isUnlocked={isUnlocked} />
