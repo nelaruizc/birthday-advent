@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { BackgroundPattern } from './components/BackgroundPattern'
-import { BottomNavigation } from './components/BottomNavigation'
 import { CountdownCard } from './components/CountdownCard'
 import { GiftDetail } from './components/GiftDetail'
 import { HeroCard } from './components/HeroCard'
@@ -36,7 +35,6 @@ const Home = ({
       </svg>
       <span>, by Nela.</span>
     </footer>
-    <BottomNavigation />
   </>
 )
 
