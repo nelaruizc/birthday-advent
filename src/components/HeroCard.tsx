@@ -12,7 +12,7 @@ const block = (value: number, label: string) => (
 )
 
 export const HeroCard = ({ countdown }: Props) => {
-  const headerIllustration = `${import.meta.env.BASE_URL}birthday-cake.svg`
+  const headerIllustration = `${import.meta.env.BASE_URL}happy-birthday.svg`
 
   return (
     <section className="rounded-mega bg-gradient-to-b from-[#faf8f4] to-[#f5f1ec] p-4 shadow-soft">
