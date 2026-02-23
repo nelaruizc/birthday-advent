@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
 import { BackgroundPattern } from './components/BackgroundPattern'
 import { CountdownCard } from './components/CountdownCard'
-import { GiftDetail } from './components/GiftDetail'
 import { HeroCard } from './components/HeroCard'
-import { gifts } from './data/gifts'
+import { daysData } from './data/days'
 import { getCountdown } from './utils/countdown'
 import { getOpenedGifts, saveOpenedGift } from './utils/storage'
 import { isGiftUnlocked } from './utils/unlock'
@@ -12,13 +10,20 @@ import { isGiftUnlocked } from './utils/unlock'
 const Home = ({
   openedGifts,
   countdown,
+  markOpened,
 }: {
   openedGifts: number[]
   countdown: ReturnType<typeof getCountdown>
+  markOpened: (id: number) => void
 }) => (
   <>
     <HeroCard countdown={countdown} />
-    <CountdownCard gifts={gifts} openedGifts={openedGifts} isUnlocked={(id) => isGiftUnlocked(id, new Date())} />
+    <CountdownCard
+      daysData={daysData}
+      openedGifts={openedGifts}
+      isUnlocked={(day) => isGiftUnlocked(day, new Date())}
+      markOpened={markOpened}
+    />
     <footer className="flex items-center justify-center gap-1 pb-2 pt-1 text-center text-sm text-[#6e7488]">
       <span>Made with</span>
       <svg
@@ -57,11 +62,7 @@ function App() {
   const layout = useMemo(
     () => (
       <BackgroundPattern>
-        <Routes>
-          <Route path="/" element={<Home openedGifts={openedGifts} countdown={countdown} />} />
-          <Route path="/gift/:id" element={<GiftDetail markOpened={markOpened} />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Home openedGifts={openedGifts} countdown={countdown} markOpened={markOpened} />
       </BackgroundPattern>
     ),
     [countdown, markOpened, openedGifts],

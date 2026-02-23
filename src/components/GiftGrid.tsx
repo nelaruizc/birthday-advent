@@ -1,32 +1,67 @@
-import { useNavigate } from 'react-router-dom'
-import type { Gift } from '../data/gifts'
+import { useEffect, useState } from 'react'
+import type { DayData } from '../data/days'
+import { DayBottomSheet } from './DayBottomSheet'
 import { GiftTile } from './GiftTile'
 
 type GiftGridProps = {
-  gifts: Gift[]
+  daysData: DayData[]
   openedGifts: number[]
   isUnlocked: (id: number) => boolean
+  markOpened: (id: number) => void
 }
 
-export const GiftGrid = ({ gifts, openedGifts, isUnlocked }: GiftGridProps) => {
-  const navigate = useNavigate()
+export const GiftGrid = ({ daysData, openedGifts, isUnlocked, markOpened }: GiftGridProps) => {
+  const [activeDay, setActiveDay] = useState<DayData | null>(null)
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false)
+  const [lockedPulseDay, setLockedPulseDay] = useState<number | null>(null)
+
+  const openDay = (dayNumber: number) => {
+    if (!isUnlocked(dayNumber)) {
+      setLockedPulseDay(dayNumber)
+      window.setTimeout(() => setLockedPulseDay((current) => (current === dayNumber ? null : current)), 240)
+      return
+    }
+
+    const dayData = daysData.find((day) => day.day === dayNumber)
+    if (!dayData) return
+
+    setActiveDay(dayData)
+    setIsOverlayVisible(true)
+    markOpened(dayNumber)
+  }
+
+  const closeDay = () => {
+    setIsOverlayVisible(false)
+  }
+
+  useEffect(() => {
+    if (isOverlayVisible || !activeDay) return
+
+    const cleanupTimer = window.setTimeout(() => setActiveDay(null), 300)
+    return () => window.clearTimeout(cleanupTimer)
+  }, [activeDay, isOverlayVisible])
 
   return (
-    <div className="mt-5 grid grid-cols-3 gap-2.5 rounded-[24px] bg-[#f3efea] p-3 shadow-inner-soft sm:grid-cols-4">
-      {gifts.map((gift) => {
-        const locked = !isUnlocked(gift.id)
-        const opened = openedGifts.includes(gift.id)
+    <>
+      <div className="mt-5 grid grid-cols-3 gap-2.5 rounded-[24px] bg-[#f3efea] p-3 shadow-inner-soft sm:grid-cols-4">
+        {daysData.map((dayData) => {
+          const locked = !isUnlocked(dayData.day)
+          const opened = openedGifts.includes(dayData.day)
 
-        return (
-          <GiftTile
-            key={gift.id}
-            gift={gift}
-            locked={locked}
-            opened={opened}
-            onClick={() => navigate(`/gift/${gift.id}`)}
-          />
-        )
-      })}
-    </div>
+          return (
+            <GiftTile
+              key={dayData.day}
+              dayData={dayData}
+              locked={locked}
+              opened={opened}
+              onClick={() => openDay(dayData.day)}
+              pulseLocked={lockedPulseDay === dayData.day}
+            />
+          )
+        })}
+      </div>
+
+      <DayBottomSheet dayData={activeDay} isVisible={isOverlayVisible} closeDay={closeDay} />
+    </>
   )
 }

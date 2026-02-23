@@ -1,13 +1,14 @@
-import type { Gift } from '../data/gifts'
+import type { DayData } from '../data/days'
 import { GiftGrid } from './GiftGrid'
 
 type Props = {
-  gifts: Gift[]
+  daysData: DayData[]
   openedGifts: number[]
   isUnlocked: (id: number) => boolean
+  markOpened: (id: number) => void
 }
 
-export const CountdownCard = ({ gifts, openedGifts, isUnlocked }: Props) => (
+export const CountdownCard = ({ daysData, openedGifts, isUnlocked, markOpened }: Props) => (
   <section id="adventure" className="rounded-mega bg-gradient-to-b from-[#f8f5f2] to-[#f5f1ec] p-5 shadow-soft">
     <div className="flex items-start justify-between gap-3">
       <h2 className="max-w-56 font-serif text-[2.3rem] leading-[0.95] text-[#59607a]">Your Daily Task Adventure</h2>
@@ -17,6 +18,6 @@ export const CountdownCard = ({ gifts, openedGifts, isUnlocked }: Props) => (
       </div>
     </div>
 
-    <GiftGrid gifts={gifts} openedGifts={openedGifts} isUnlocked={isUnlocked} />
+    <GiftGrid daysData={daysData} openedGifts={openedGifts} isUnlocked={isUnlocked} markOpened={markOpened} />
   </section>
 )
