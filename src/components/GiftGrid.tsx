@@ -12,7 +12,7 @@ export const GiftGrid = ({ gifts, openedGifts, isUnlocked }: GiftGridProps) => {
   const navigate = useNavigate()
 
   return (
-    <div className="mt-4 grid grid-cols-3 gap-2.5">
+    <div className="mt-5 grid grid-cols-3 gap-2.5 rounded-[24px] bg-[#f3efea] p-3 shadow-inner-soft sm:grid-cols-4">
       {gifts.map((gift) => {
         const locked = !isUnlocked(gift.id)
         const opened = openedGifts.includes(gift.id)

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { BackgroundPattern } from './components/BackgroundPattern'
-import { CountdownCard, FloatingCountdown } from './components/CountdownCard'
+import { BottomNavigation } from './components/BottomNavigation'
+import { CountdownCard } from './components/CountdownCard'
 import { GiftDetail } from './components/GiftDetail'
 import { HeroCard } from './components/HeroCard'
 import { gifts } from './data/gifts'
@@ -17,22 +18,17 @@ const Home = ({
   countdown: ReturnType<typeof getCountdown>
 }) => (
   <>
-    <HeroCard />
-    <FloatingCountdown countdown={countdown} />
-    <CountdownCard
-      gifts={gifts}
-      openedGifts={openedGifts}
-      isUnlocked={(id) => isGiftUnlocked(id, new Date())}
-    />
-    <footer className="flex items-center justify-center gap-1 pb-8 pt-1 text-center text-sm text-blue-100/80">
+    <HeroCard countdown={countdown} />
+    <CountdownCard gifts={gifts} openedGifts={openedGifts} isUnlocked={(id) => isGiftUnlocked(id, new Date())} />
+    <footer className="flex items-center justify-center gap-1 pb-2 pt-1 text-center text-sm text-[#6e7488]">
       <span>Made with</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="icon icon-tabler icons-tabler-filled icon-tabler-heart"
+        className="text-[#c28a79]"
         aria-label="heart icon"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -40,6 +36,7 @@ const Home = ({
       </svg>
       <span>, by Nela.</span>
     </footer>
+    <BottomNavigation />
   </>
 )
 
