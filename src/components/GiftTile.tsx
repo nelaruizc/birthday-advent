@@ -25,10 +25,10 @@ export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: Gift
       onClick={onClick}
       className={`relative h-[4.35rem] rounded-2xl border-none p-2 text-right font-serif text-[2.05rem] leading-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c8a890] ${
         isFeaturedDay
-          ? 'col-span-2 bg-[#55586F] text-[#FFFFFF] shadow-[0_12px_30px_rgba(85,88,111,0.25)]'
+          ? 'col-span-2 bg-[#55586F] text-[#FFFFFF]'
           : locked
-            ? 'cursor-not-allowed bg-[#eaebee] text-[#afb4c0] saturate-0 shadow-soft-tile'
-            : `bg-gradient-to-br text-[#8a90a1] shadow-soft-tile hover:-translate-y-0.5 ${tileBackgrounds[(dayData.day - 1) % tileBackgrounds.length]}`
+            ? 'cursor-not-allowed bg-[#eaebee] text-[#afb4c0] saturate-0'
+            : `bg-gradient-to-br text-[#8a90a1] hover:-translate-y-0.5 ${tileBackgrounds[(dayData.day - 1) % tileBackgrounds.length]}`
       } ${opened ? 'ring-1 ring-[#d8c2b6]' : ''} ${pulseLocked ? 'tile-locked-pulse' : ''}`}
     >
       {locked && <span className={`absolute left-2 top-2 text-sm ${isFeaturedDay ? 'text-[#FFFFFF]' : 'text-[#c6cad6]'}`}>🔒</span>}
