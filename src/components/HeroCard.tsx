@@ -5,7 +5,7 @@ export const HeroCard = () => {
         <img
           src={`${import.meta.env.BASE_URL}birthday-cake.svg`}
           alt="Birthday cake"
-          className="h-56 w-full rounded-2xl object-cover"
+          className="w-full max-h-56 rounded-2xl object-contain"
         />
 
         <h1 className="mt-4 text-center font-serif text-6xl leading-[0.9]">Birthday Advent</h1>
