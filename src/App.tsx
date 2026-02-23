@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { BackgroundPattern } from './components/BackgroundPattern'
-import { CountdownCard } from './components/CountdownCard'
+import { CountdownCard, FloatingCountdown } from './components/CountdownCard'
 import { GiftDetail } from './components/GiftDetail'
 import { HeroCard } from './components/HeroCard'
 import { gifts } from './data/gifts'
@@ -18,8 +18,8 @@ const Home = ({
 }) => (
   <>
     <HeroCard />
+    <FloatingCountdown countdown={countdown} />
     <CountdownCard
-      countdown={countdown}
       gifts={gifts}
       openedGifts={openedGifts}
       isUnlocked={(id) => isGiftUnlocked(id, new Date())}
