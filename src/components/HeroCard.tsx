@@ -29,7 +29,7 @@ export const HeroCard = ({ countdown }: Props) => {
             Descubre sorpresas diarias, porque celebrarte no cabe en un solo día.
           </p>
 
-          <div className="mt-6 rounded-[26px] bg-[#f6f3ef] px-3 py-5 shadow-inner-soft">
+          <div className="mt-6">
             <dl className="flex items-start justify-center gap-1">
               {block(countdown.days, 'DAYS')}
               <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
