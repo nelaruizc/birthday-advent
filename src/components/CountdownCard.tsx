@@ -25,7 +25,7 @@ const block = (value: number, label: string) => (
 
 export const FloatingCountdown = ({ countdown }: CountdownProps) => (
   <div
-    className="relative my-8 bg-transparent px-2 py-6 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-2/3 before:-translate-x-1/2 before:bg-[rgba(255,255,255,0.15)] before:content-[''] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-2/3 after:-translate-x-1/2 after:bg-[rgba(255,255,255,0.15)] after:content-[''] sm:my-10 sm:py-7"
+    className="relative my-2 bg-transparent px-2 py-3 text-center before:absolute before:left-1/2 before:top-0 before:h-px before:w-2/3 before:-translate-x-1/2 before:bg-[rgba(255,255,255,0.15)] before:content-[''] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-2/3 after:-translate-x-1/2 after:bg-[rgba(255,255,255,0.15)] after:content-[''] sm:my-3 sm:py-4"
     aria-label="Countdown to your birthday"
   >
     <dl className="flex items-start justify-center gap-2 sm:gap-3">
@@ -39,7 +39,7 @@ export const FloatingCountdown = ({ countdown }: CountdownProps) => (
       </span>
       {block(countdown.minutes, 'minutes')}
     </dl>
-    <p className="mt-4 text-sm uppercase tracking-[0.18em] text-[rgba(255,255,255,0.7)] sm:text-base">Until your birthday</p>
+    <p className="mt-2 text-sm uppercase tracking-[0.18em] text-[rgba(255,255,255,0.7)] sm:mt-3 sm:text-base">Until your birthday</p>
   </div>
 )
 
