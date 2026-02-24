@@ -75,12 +75,20 @@ export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: Gift
     >
       <span className="absolute left-2 top-2">
         {locked ? (
-          <LockQuestionIcon className={`h-4 w-4 ${isFeaturedDay ? 'text-[#e7e9ef]' : 'text-[#b0b6c4]'}`} />
+          <LockQuestionIcon className={`h-7 w-7 ${isFeaturedDay ? 'text-[#e7e9ef]' : 'text-[#b0b6c4]'}`} />
         ) : (
-          <LockOpenIcon className={`h-4 w-4 ${isFeaturedDay ? 'text-[#f3eee8]' : 'text-[#9ca3b4]'}`} />
+          <LockOpenIcon className={`h-7 w-7 ${isFeaturedDay ? 'text-[#f3eee8]' : 'text-[#9ca3b4]'}`} />
         )}
       </span>
-      <span>{dayData.day}</span>
+      {dayData.day === 1 ? (
+        <img
+          src="/celebrating.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mx-auto h-full w-full object-contain p-1 opacity-40"
+        />
+      ) : null}
+      <span className="relative z-10 font-sans font-medium">{dayData.day}</span>
     </button>
   )
 }
