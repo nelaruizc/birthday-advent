@@ -10,7 +10,7 @@ export const daysData: DayData[] = [
     day: 1,
     title: '¡Sorpresa!',
     description:
-      'Este es tu propio calendario de adviento cumpleañero, hecho especialmente para ti. Spoiler: Empiezan los regalitos. El primer regalo está justo encima de la librería del despacho.',
+      'Este es tu propio calendario de adviento cumpleañero, hecho especialmente para ti. Spoiler: Empiezan los regalitos.\n\nEl primer regalito está justo encima de la librería del despacho.',
     image: undefined,
   },
   {
