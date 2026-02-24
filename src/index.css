@@ -46,26 +46,25 @@ body {
 
 
 .card-header-illustration {
-  height: 100px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
 .card-header-illustration img {
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: auto;
   object-fit: contain;
 }
 
 .card-day-label {
-  font-size: 12px;
-  letter-spacing: 3px;
+  font-size: 14px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 4px;
+  opacity: 0.75;
+  margin-bottom: 6px;
 }
 
 .card-title {
@@ -86,10 +85,9 @@ body {
 }
 
 .card-body-text {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.6;
-  hyphens: auto;
+  text-align: left;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
 }
 
 .modal {
@@ -97,7 +95,7 @@ body {
 }
 
 .modal-content {
-  padding: 28px 26px;
+  padding: 24px 26px 28px 26px;
 }
 
 @keyframes fadeIn {
