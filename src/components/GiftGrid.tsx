@@ -43,7 +43,7 @@ export const GiftGrid = ({ daysData, openedGifts, isUnlocked, markOpened }: Gift
 
   return (
     <>
-      <div className="mt-5 grid grid-cols-3 gap-2.5 sm:grid-cols-4">
+      <div className="mt-8 grid grid-cols-3 gap-x-3 gap-y-3 sm:grid-cols-4">
         {daysData.map((dayData) => {
           const locked = !isUnlocked(dayData.day)
           const opened = openedGifts.includes(dayData.day)
