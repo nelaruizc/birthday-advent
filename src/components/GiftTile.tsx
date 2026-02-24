@@ -24,7 +24,7 @@ const LockQuestionIcon = ({ className }: { className: string }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
@@ -46,7 +46,7 @@ const LockOpenIcon = ({ className }: { className: string }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
@@ -65,19 +65,19 @@ export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: Gift
     <button
       aria-label={`Open day ${dayData.day}`}
       onClick={onClick}
-      className={`relative h-[4.35rem] rounded-2xl border-none p-2 text-right font-serif text-[2.05rem] leading-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c8a890] ${
+      className={`relative flex h-[4.55rem] items-end justify-end rounded-[0.9rem] border-none px-4 pb-3 pt-3 text-right font-serif text-[2.45rem] leading-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c8a890] ${
         isFeaturedDay
-          ? 'col-span-2 bg-[#55586F] text-[#FFFFFF]'
+          ? 'col-span-2 bg-[#dce2ee] text-[#5f667d]'
           : locked
-            ? 'cursor-not-allowed bg-[#eaebee] text-[#afb4c0] saturate-0'
-            : `bg-gradient-to-br text-[#8a90a1] hover:-translate-y-0.5 ${tileBackgrounds[(dayData.day - 1) % tileBackgrounds.length]}`
-      } ${opened ? 'ring-1 ring-[#d8c2b6]' : ''} ${pulseLocked ? 'tile-locked-pulse' : ''}`}
+            ? 'cursor-not-allowed bg-[#eef0f3] text-[#b9bfcb] saturate-0'
+            : `bg-gradient-to-br text-[#81889a] hover:-translate-y-0.5 ${tileBackgrounds[(dayData.day - 1) % tileBackgrounds.length]}`
+      } ${opened ? 'bg-[#e3e8f1] text-[#626a7f]' : ''} ${pulseLocked ? 'tile-locked-pulse' : ''}`}
     >
-      <span className="absolute left-2 top-2">
+      <span className="absolute left-3 top-3 opacity-65">
         {locked ? (
-          <LockQuestionIcon className={`h-7 w-7 ${isFeaturedDay ? 'text-[#e7e9ef]' : 'text-[#b0b6c4]'}`} />
+          <LockQuestionIcon className={`h-5 w-5 ${isFeaturedDay ? 'text-[#a8afc0]' : 'text-[#b8bfcc]'}`} />
         ) : (
-          <LockOpenIcon className={`h-7 w-7 ${isFeaturedDay ? 'text-[#f3eee8]' : 'text-[#9ca3b4]'}`} />
+          <LockOpenIcon className={`h-5 w-5 ${isFeaturedDay ? 'text-[#939bb0]' : 'text-[#adb4c3]'}`} />
         )}
       </span>
       {dayData.day === 1 ? (
@@ -85,10 +85,10 @@ export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: Gift
           src="/celebrating.svg"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 mx-auto h-full w-full object-contain p-1 opacity-40"
+          className="pointer-events-none absolute inset-0 mx-auto h-full w-full object-contain p-1 opacity-30"
         />
       ) : null}
-      <span className="relative z-10 font-sans font-medium">{dayData.day}</span>
+      <span className="relative z-10 block text-right">{dayData.day}</span>
     </button>
   )
 }

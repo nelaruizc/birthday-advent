@@ -11,7 +11,13 @@ type Props = {
 export const CountdownCard = ({ daysData, openedGifts, isUnlocked, markOpened }: Props) => (
   <section id="adventure" className="rounded-mega bg-[#FFFFFF] px-5 pb-5 pt-6">
     <div className="flex items-start justify-between gap-3">
-      <h2 className="max-w-56 font-serif text-[2.3rem] leading-[0.95] text-[#59607a]">Una sorpresa cada día</h2>
+      <div className="max-w-56">
+        <h2 className="font-serif leading-[1.08] text-[#59607a]">
+          <span className="block text-[2.15rem] font-medium">Una sorpresa</span>
+          <span className="block text-[2.32rem] text-[#4f5772]">cada día</span>
+        </h2>
+        <span className="mt-3 block h-px w-20 bg-[#8f98b3]/30" aria-hidden="true" />
+      </div>
       <div className="rounded-3xl bg-[#55586F] px-4 py-2 text-center text-[#FFFFFF]">
         <p className="text-[2.1rem] font-semibold leading-none">11</p>
         <p className="text-sm">Marzo</p>
