@@ -8,9 +8,10 @@ export type DayData = {
 export const daysData: DayData[] = [
   {
     day: 1,
-    title: 'Morning Smile',
-    description: 'Placeholder: empieza el calendario con una sorpresa dulce para abrir el día con buena energía.',
-    image: '/happy-birthday.svg',
+    title: '¡Sorpresa!',
+    description:
+      'Este es tu propio calendario de adviento cumpleañero, hecho especialmente para ti. Spoiler: Empiezan los regalitos. El primer regalo está justo encima de la librería del despacho.',
+    image: '/celebrating.svg',
   },
   {
     day: 2,
