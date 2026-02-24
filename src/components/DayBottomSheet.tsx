@@ -59,8 +59,8 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
             </div>
           ))}
 
-        <p className="card-day-label mt-5 text-[#8f96a9]">Día {dayData.day}</p>
-        <h3 className="card-title font-serif text-[#59607a]">{dayData.title}</h3>
+        <div className="card-day-label mt-5 text-[#8f96a9]">Día {dayData.day}</div>
+        <h2 className="card-title font-serif text-[#59607a]">{dayData.title}</h2>
         <div className="card-body-text mt-3 text-base text-[#747b90]">
           {descriptionParagraphs.map((paragraph, index) => (
             <p key={`paragraph-${index}`} className={index === 0 ? '' : 'mt-2'}>
