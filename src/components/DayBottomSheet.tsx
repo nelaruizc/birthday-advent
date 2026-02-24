@@ -30,13 +30,14 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
           ×
         </button>
 
-        {dayData.day === 1 ? (
-          <img src={dayData.image} alt={dayData.title} className="mt-1 mx-auto h-40 w-full object-contain" />
-        ) : (
-          <div className="mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-[#ece6dd] to-[#f6f2ed] p-3">
-            <img src={dayData.image} alt={dayData.title} className="mx-auto h-40 w-full object-contain" />
-          </div>
-        )}
+        {dayData.image &&
+          (dayData.day === 1 ? (
+            <img src={dayData.image} alt={dayData.title} className="mt-1 mx-auto h-40 w-full object-contain" />
+          ) : (
+            <div className="mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-[#ece6dd] to-[#f6f2ed] p-3">
+              <img src={dayData.image} alt={dayData.title} className="mx-auto h-40 w-full object-contain" />
+            </div>
+          ))}
 
         <p className="mt-5 text-sm uppercase tracking-[0.18em] text-[#8f96a9]">Día {dayData.day}</p>
         <h3 className="mt-1 font-serif text-5xl leading-[0.92] text-[#59607a]">{dayData.title}</h3>
