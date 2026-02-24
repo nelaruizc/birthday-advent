@@ -8,6 +8,8 @@ type DayBottomSheetProps = {
 
 export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetProps) => {
   if (!dayData) return null
+  const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
+  const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image
 
   return (
     <div
@@ -30,12 +32,29 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
           ×
         </button>
 
-        {dayData.image &&
-          (dayData.day === 1 ? (
-            <img src={dayData.image} alt={dayData.title} className="mt-1 mx-auto h-40 w-full object-contain" />
-          ) : (
+        {dayData.day === 1 ? (
+          <div className="card-header-illustration">
+            <img
+              src={celebratingSrc}
+              alt="Celebración"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+              }}
+            />
+          </div>
+        ) : null}
+
+        {imageSrc &&
+          (dayData.day === 1 ? null : (
             <div className="mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-[#ece6dd] to-[#f6f2ed] p-3">
-              <img src={dayData.image} alt={dayData.title} className="mx-auto h-40 w-full object-contain" />
+              <img
+                src={imageSrc}
+                alt={dayData.title}
+                className="mx-auto h-40 w-full object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                }}
+              />
             </div>
           ))}
 

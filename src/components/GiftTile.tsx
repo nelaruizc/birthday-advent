@@ -60,6 +60,7 @@ const LockOpenIcon = ({ className }: { className: string }) => (
 
 export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: GiftTileProps) => {
   const isFeaturedDay = dayData.day === 11
+  const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
 
   return (
     <button
@@ -80,12 +81,15 @@ export const GiftTile = ({ dayData, locked, opened, onClick, pulseLocked }: Gift
           <LockOpenIcon className={`h-5 w-5 ${isFeaturedDay ? 'text-[#939bb0]' : 'text-[#adb4c3]'}`} />
         )}
       </span>
-      {dayData.day === 1 ? (
+      {dayData.day === 1 && celebratingSrc ? (
         <img
-          src="/celebrating.svg"
+          src={celebratingSrc}
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 mx-auto h-full w-full object-contain p-1 opacity-30"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none'
+          }}
         />
       ) : null}
       <span className="relative z-10 block text-right">{dayData.day}</span>

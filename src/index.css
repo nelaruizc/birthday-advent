@@ -43,3 +43,22 @@ body {
 .tile-locked-pulse {
   animation: lockedPulse 240ms ease-out;
 }
+
+
+.card-header-illustration {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.card-header-illustration img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
