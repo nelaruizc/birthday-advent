@@ -26,7 +26,7 @@ const Home = ({
       isUnlocked={(day) => isGiftUnlocked(day, new Date())}
       markOpened={markOpened}
     />
-    <footer className="flex items-center justify-center gap-1 pb-2 pt-1 text-center text-sm text-[#6e7488]">
+    <footer className="flex items-center justify-center gap-1 pb-6 pt-1 text-center text-sm text-[#6e7488]">
       <span>Made with</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
