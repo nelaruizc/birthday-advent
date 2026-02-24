@@ -2,7 +2,7 @@ export type DayData = {
   day: number
   title: string
   description: string
-  image: string
+  image?: string
 }
 
 export const daysData: DayData[] = [
@@ -11,7 +11,7 @@ export const daysData: DayData[] = [
     title: '¡Sorpresa!',
     description:
       'Este es tu propio calendario de adviento cumpleañero, hecho especialmente para ti. Spoiler: Empiezan los regalitos. El primer regalo está justo encima de la librería del despacho.',
-    image: '/celebrating.svg',
+    image: undefined,
   },
   {
     day: 2,
