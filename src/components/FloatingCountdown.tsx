@@ -13,17 +13,19 @@ const block = (value: number, label: string) => (
 
 export const FloatingCountdown = ({ countdown }: Props) => (
   <section aria-label="Birthday countdown" className="py-5">
-    <dl className="flex items-start justify-center gap-1">
-      {block(countdown.days, 'DÍAS')}
-      <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
-        ·
-      </span>
-      {block(countdown.hours, 'HORAS')}
-      <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
-        ·
-      </span>
-      {block(countdown.minutes, 'MINUTOS')}
-    </dl>
-    <p className="mt-4 text-center text-[0.78rem] tracking-[0.12em] text-[#9398a7]">PARA TU CUMPLEAÑOS</p>
+    <div className="mx-auto flex w-fit flex-col items-center">
+      <dl className="flex items-start justify-center gap-1">
+        {block(countdown.days, 'DÍAS')}
+        <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
+          ·
+        </span>
+        {block(countdown.hours, 'HORAS')}
+        <span aria-hidden="true" className="px-1 pt-1 text-2xl text-[#acb0bc]">
+          ·
+        </span>
+        {block(countdown.minutes, 'MINUTOS')}
+      </dl>
+      <p className="mt-4 w-full text-center text-[0.87rem] tracking-[0.15em] text-[#9398a7]">PARA TU CUMPLEAÑOS</p>
+    </div>
   </section>
 )
