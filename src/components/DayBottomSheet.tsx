@@ -10,6 +10,7 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
   if (!dayData) return null
   const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
   const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image
+  const descriptionParagraphs = dayData.description.split('\n\n').filter(Boolean)
 
   return (
     <div
@@ -60,7 +61,13 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
 
         <p className="card-day-label mt-5 text-[#8f96a9]">Día {dayData.day}</p>
         <h3 className="card-title font-serif text-[#59607a]">{dayData.title}</h3>
-        <p className="card-body-text mt-4 text-base text-[#747b90]">{dayData.description}</p>
+        <div className="card-body-text mt-3 text-base text-[#747b90]">
+          {descriptionParagraphs.map((paragraph, index) => (
+            <p key={`paragraph-${index}`} className={index === 0 ? '' : 'mt-2'}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </section>
     </div>
   )
