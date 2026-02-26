@@ -14,7 +14,7 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
 
   return (
     <div
-      className={`modal fixed inset-0 z-50 flex items-end bg-[rgba(0,0,0,0.4)] p-3 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      className={`modal fixed inset-0 z-50 flex items-end bg-[rgba(0,0,0,0.4)] p-3 transition-opacity duration-200 ease-out ${isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
       onClick={closeDay}
       aria-hidden={!isVisible}
     >
@@ -22,13 +22,13 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
         role="dialog"
         aria-modal="true"
         aria-label={`Day ${dayData.day} details`}
-        className={`modal-content max-h-[90vh] w-full overflow-y-auto rounded-t-[24px] bg-[#f5f1ec] shadow-[0_-12px_45px_rgba(40,41,53,0.18)] transition-transform duration-300 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`modal-content max-h-[90vh] w-full overflow-y-auto rounded-t-[26px] transition-all duration-200 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}
         onClick={(event) => event.stopPropagation()}
       >
         <button
           aria-label="Cerrar tarjeta"
           onClick={closeDay}
-          className="ml-auto block rounded-full px-2 text-3xl leading-none text-[#7d8399] transition hover:bg-[#e8e2db]"
+          className="ml-auto block rounded-full px-2 text-[1.7rem] leading-none text-[#5f667d]/60 transition hover:bg-[#e8e2db] hover:text-[#5f667d]/90"
         >
           ×
         </button>
@@ -59,11 +59,11 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
             </div>
           ))}
 
-        <div className="card-day-label mt-5 text-[#8f96a9]">Día {dayData.day}</div>
+        <div className="card-day-label mt-5 text-[#14283c]/55">DÍA {dayData.day}</div>
         <h2 className="card-title font-serif text-[#59607a]">{dayData.title}</h2>
-        <div className="card-body-text mt-3 text-base text-[#747b90]">
+        <div className="card-body-text mx-auto mt-4 max-w-[32ch] text-base text-[#70778b]">
           {descriptionParagraphs.map((paragraph, index) => (
-            <p key={`paragraph-${index}`} className={index === 0 ? '' : 'mt-2'}>
+            <p key={`paragraph-${index}`} className={index === 0 ? '' : 'mt-4'}>
               {paragraph}
             </p>
           ))}
