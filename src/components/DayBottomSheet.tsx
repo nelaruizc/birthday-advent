@@ -9,7 +9,7 @@ type DayBottomSheetProps = {
 export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetProps) => {
   if (!dayData) return null
   const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
-  const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image
+  const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image ?? celebratingSrc
   const descriptionParagraphs = dayData.description.split('\n\n').filter(Boolean)
 
   return (
@@ -33,31 +33,15 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
           ×
         </button>
 
-        {dayData.day === 1 ? (
-          <div className="card-header-illustration">
-            <img
-              src={celebratingSrc}
-              alt="Celebración"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
-            />
-          </div>
-        ) : null}
-
-        {imageSrc &&
-          (dayData.day === 1 ? null : (
-            <div className="mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-[#ece6dd] to-[#f6f2ed] p-3">
-              <img
-                src={imageSrc}
-                alt={dayData.title}
-                className="mx-auto h-40 w-full object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                }}
-              />
-            </div>
-          ))}
+        <div className="card-header-illustration">
+          <img
+            src={imageSrc}
+            alt={dayData.title}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none'
+            }}
+          />
+        </div>
 
         <div className="card-day-label mt-5 text-[#14283c]/55">DÍA {dayData.day}</div>
         <h2 className="card-title font-serif text-[#59607a]">{dayData.title}</h2>
