@@ -15,9 +15,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 2,
-    title: 'Mini Adventure',
-    description: 'Placeholder: hoy toca una actividad corta y divertida para sumar recuerdos bonitos.',
-    image: '/birthday-cake.svg',
+    title: '¿QUÉ SERÁ, QUÉ SERÁ?',
+    description:
+      'Sé que el regalo del día de hoy será uno de tus favoritos.\n\nDisfrútalo. Pero primero tendrás que buscarlo, está en alguna de las sillas del comedor (ten cuidado).\n\nSi sonríes un poco, sabré que te ha gustado.',
+    image: undefined,
   },
   {
     day: 3,
