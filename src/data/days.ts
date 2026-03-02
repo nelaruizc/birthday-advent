@@ -22,9 +22,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 3,
-    title: 'Golden Note',
-    description: 'Placeholder: una nota especial para recordarte lo increíble que eres.',
-    image: '/happy-birthday.svg',
+    title: 'Hoy no hay que encontrar la bolsa de regalo, pero siguen las sorpresas.',
+    description:
+      'Los detalles no siempre vienen en una bolsa de regalo.\n\n10 minutitos de relax siempre vienen bien. Esta noche solo tendrás que relajarte: bolsa caliente, una infusión, y…\n\nUn masaje de pies, especialmente para ti.',
+    image: undefined,
   },
   {
     day: 4,
