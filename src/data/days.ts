@@ -29,9 +29,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 4,
-    title: 'Coffee & Calm',
-    description: 'Placeholder: un momento tranquilo con tu bebida favorita y música suave.',
-    image: '/birthday-cake.svg',
+    title: 'Esto va de pequeñas cosas que te gustan mucho.',
+    description:
+      'Por si no ha quedado claro, me gusta la idea de darte pequeños detalles que sé que te gustan mucho.\n\nPodrás encontrar el regalo del día de hoy justo al lado del sofá.',
+    image: undefined,
   },
   {
     day: 5,
