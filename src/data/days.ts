@@ -36,9 +36,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 5,
-    title: 'Little Treat',
-    description: 'Placeholder: un pequeño capricho pensado para sacarte una sonrisa.',
-    image: '/happy-birthday.svg',
+    title: 'Hoy va de elegir',
+    description:
+      'Hoy tienes la potestad de elegir la cenita, y el postre lo elijo yo, así que en esa parte no puedes mandar porque será algo que te gusta mucho y comes poco. Ya no más pistas.\n\n¿Qué quieres cenar, mi amor?',
+    image: undefined,
   },
   {
     day: 6,
