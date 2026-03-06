@@ -43,9 +43,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 6,
-    title: 'Photo Mission',
-    description: 'Placeholder: captura una foto del momento más bonito del día.',
-    image: '/birthday-cake.svg',
+    title: 'Hoy se juega al escondite',
+    description:
+      'Podrás encontrar el regalo de hoy en alguna de tus gavetas, recuerda que tienes varias gavetas en varios sitios.\n\nComo eres muy lista, seguro que lo encuentras súper rápido.',
+    image: undefined,
   },
   {
     day: 7,
