@@ -50,9 +50,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 7,
-    title: 'Warm Wishes',
-    description: 'Placeholder: una tarjeta con mensajes bonitos para seguir celebrando.',
-    image: '/happy-birthday.svg',
+    title: 'Como diría Es Sheeran: we made these memories for ourselves',
+    description:
+      'El regalo de hoy está en alguna parte de la cocina. Puede estar en cualquier parte.',
+    image: undefined,
   },
   {
     day: 8,
