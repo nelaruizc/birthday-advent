@@ -57,9 +57,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 8,
-    title: 'Creative Break',
-    description: 'Placeholder: una actividad creativa rápida para activar inspiración.',
-    image: '/birthday-cake.svg',
+    title: 'Un caprichito',
+    description:
+      'Algunos regalos simplemente se disfrutan, y el de hoy es justamente uno de esos.\n\nTe está esperando en la encimera de la cocina.',
+    image: undefined,
   },
   {
     day: 9,
