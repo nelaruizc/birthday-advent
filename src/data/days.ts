@@ -64,9 +64,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 9,
-    title: 'Movie Moment',
-    description: 'Placeholder: prepara manta y peli para una noche cozy.',
-    image: '/happy-birthday.svg',
+    title: 'Tómate un break',
+    description:
+      'El regalo de hoy es para tomarse un break, y consta de 2 partes, una que puedes disfrutar ahora mismo (está a la vista) y otra que es para disfrutar otro día (está en la nevera).',
+    image: undefined,
   },
   {
     day: 10,
