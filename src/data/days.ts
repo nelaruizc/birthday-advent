@@ -78,8 +78,9 @@ export const daysData: DayData[] = [
   },
   {
     day: 11,
-    title: '¿Preparada para descubrir tu regalo de cumpleaños?',
-    description: 'La cuenta regresiva ha terminado.',
-    image: '/happy-birthday.svg',
+    title: '¡Feliz cumpleaños, mi amor! 🎉',
+    description:
+      'Si has llegado hasta aquí, ya abriste cada sorpresa de este calendario hecho con muchísimo amor.\n\nAhora toca descubrir el regalo final.\n\nCuando quieras, pulsa el botón y escanea el QR.',
+    image: undefined,
   },
 ]
