@@ -78,8 +78,8 @@ export const daysData: DayData[] = [
   },
   {
     day: 11,
-    title: 'Final Surprise',
-    description: 'Placeholder: el cierre del calendario trae el mensaje final más especial. ✨',
+    title: '¿Preparada para descubrir tu regalo de cumpleaños?',
+    description: 'La cuenta regresiva ha terminado.',
     image: '/happy-birthday.svg',
   },
 ]
