@@ -78,9 +78,9 @@ export const daysData: DayData[] = [
   },
   {
     day: 11,
-    title: '¡Feliz cumpleaños, mi amor! 🎉',
+    title: '¡Feliz cumpleaños a mi **persona favorita**!',
     description:
-      'Si has llegado hasta aquí, ya abriste cada sorpresa de este calendario hecho con muchísimo amor.\n\nAhora toca descubrir el regalo final.\n\nCuando quieras, pulsa el botón y escanea el QR.',
+      'Si has llegado hasta aquí, ya abriste cada sorpresa de este calendario hecho con muchísimo amor.\n\nAhora toca descubrir el regalo final.',
     image: undefined,
   },
 ]
