@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import type { DayData } from '../data/days'
 
 type DayBottomSheetProps = {
@@ -21,9 +21,20 @@ const renderTitleWithBold = (title: string) => {
 }
 
 export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetProps) => {
+  const [isGiftRevealed, setIsGiftRevealed] = useState(false)
+  const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
+  const giftQrSrc = `${import.meta.env.BASE_URL}IMG_7830.jpeg`
+  const dayNumber = dayData?.day ?? null
+  const isDayEleven = dayNumber === 11
+
+  useEffect(() => {
+    if (!isVisible || !isDayEleven) {
+      setIsGiftRevealed(false)
+    }
+  }, [isVisible, isDayEleven, dayNumber])
 
   if (!dayData) return null
-  const celebratingSrc = `${import.meta.env.BASE_URL}celebrating.svg`
+
   const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image ?? celebratingSrc
   const descriptionParagraphs = dayData.description.split('\n\n').filter(Boolean)
 
@@ -67,6 +78,31 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
               {paragraph}
             </p>
           ))}
+
+          {isDayEleven && (
+            <div className="mt-6 flex flex-col items-center overflow-hidden">
+              <div
+                className={`w-full overflow-hidden transition-all duration-[250ms] ease-out ${isGiftRevealed ? 'max-h-0 -translate-y-1 opacity-0' : 'max-h-24 translate-y-0 opacity-100'}`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsGiftRevealed(true)}
+                  className="mx-auto block rounded-xl border border-[#d6dce8] bg-[#eef2f8] px-5 py-2.5 text-sm font-medium text-[#5a647f] shadow-sm transition hover:bg-[#e5ebf4]"
+                >
+                  Descubrir el regalo
+                </button>
+              </div>
+
+              <div
+                className={`w-full overflow-hidden transition-all duration-[250ms] ease-out ${isGiftRevealed ? 'max-h-[420px] translate-y-0 opacity-100' : 'max-h-0 translate-y-[10px] opacity-0'}`}
+              >
+                <div className="mx-auto mt-1 w-fit rounded-2xl border border-[#d8dfe9] bg-white p-3 shadow-[0_8px_24px_rgba(20,40,60,0.12)]">
+                  <img src={giftQrSrc} alt="Código QR del regalo final" className="h-40 w-40 rounded-lg object-cover" />
+                </div>
+                <p className="mt-2 text-center text-xs text-[#7a8298]">Escanea para descubrir tu regalo.</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>
