@@ -71,9 +71,10 @@ export const daysData: DayData[] = [
   },
   {
     day: 10,
-    title: 'Birthday Plan',
-    description: 'Placeholder: organiza tu plan ideal para el gran día.',
-    image: '/birthday-cake.svg',
+    title: 'Calienta que sales, mi amor 🎂',
+    description:
+      'El regalo de hoy tiene truco, porque es para disfrutarlo mañana. Y aprovecho para recordarte dos cosas:\n\n1- Mañana es tu cumple 🥳\n2- Te amo con todo mi ❤️',
+    image: undefined,
   },
   {
     day: 11,
