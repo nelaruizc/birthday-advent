@@ -19,6 +19,7 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
   const imageSrc = dayData.day === 1 ? celebratingSrc : dayData.image ?? celebratingSrc
   const descriptionParagraphs = dayData.description.split('\n\n').filter(Boolean)
   const isFinalDay = dayData.day === 11
+  const qrImageSrc = `${import.meta.env.BASE_URL}IMG_7830.jpeg`
 
   return (
     <div
@@ -56,7 +57,11 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
 
         {isFinalDay ? (
           <div className="mx-auto mt-4 max-w-[32ch] text-center">
-            <p className="text-base leading-relaxed text-[#70778b]">La cuenta regresiva ha terminado.</p>
+            {descriptionParagraphs.map((paragraph, index) => (
+              <p key={`final-paragraph-${index}`} className={`text-base leading-relaxed text-[#70778b] ${index === 0 ? '' : 'mt-4'}`}>
+                {paragraph}
+              </p>
+            ))}
 
             <button
               type="button"
@@ -74,7 +79,7 @@ export const DayBottomSheet = ({ dayData, isVisible, closeDay }: DayBottomSheetP
             >
               <div className="mx-auto w-fit rounded-2xl border border-[#e6ddd3] bg-white p-4 shadow-[0_10px_28px_rgba(45,58,85,0.12),0_0_26px_rgba(255,255,255,0.45)]">
                 <img
-                  src="/IMG_7830.jpeg"
+                  src={qrImageSrc}
                   alt="Código QR del regalo"
                   className="h-[200px] w-[200px] rounded-lg object-cover"
                 />
